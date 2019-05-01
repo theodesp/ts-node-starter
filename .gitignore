@@ -23,6 +23,7 @@ dist/
 
 # IDE #
 .idea/
+.idea/workspace.xml
 *.swp
 .awcache
 
