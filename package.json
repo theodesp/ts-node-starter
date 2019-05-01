@@ -1,0 +1,40 @@
+{
+  "name": "ts-node-starter",
+  "version": "1.0.0",
+  "description": "Opinionated Typescript Node Starter",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "build:watch": "npm run build -- --watch",
+    "clean": "npm run clean:build && npm run clean:coverage",
+    "clean:build": "rimraf lib/",
+    "clean:coverage": "rimraf coverage/",
+    "coverage": "jest --config jest/jest-coverage.config.json",
+    "coverage:open": "npm run coverage && opn ./coverage/index.html",
+    "dev": "concurrently \"npm run build:watch\" \"npm run start:watch\"",
+    "install:ci": "npm ci",
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "start": "node dist/app.js",
+    "start:watch": "nodemon dist/app.js --log",
+    "test": "jest --config jest/jest.config.json",
+    "test:ci": "jest --ci --config jest/jest-ci.config.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theodesp/ts-node-starter"
+  },
+  "keywords": [],
+  "author": "Theo Despoudis",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^24.0.12",
+    "@types/node": "^11.13.8",
+    "concurrently": "^4.1.0",
+    "jest": "^24.7.1",
+    "nodemon": "^1.19.0",
+    "rimraf": "^2.6.3",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5"
+  }
+}
