@@ -4,6 +4,13 @@
 
 An opinionated boilerplate project built with Node.js and Typescript.
 
+### Stack
+
+- Runtime: [Node.js](https://nodejs.org/en/)
+- Type System: [TypeScript](https://www.typescriptlang.org/)
+- Test Runner: [Jest](https://jestjs.io/)
+- Linter: [TSlint](https://palantir.github.io/tslint/)
+
 ## Scripts
 
 The following npm scripts can be run using `npm run <script>`. This project relies on `cross-env` and `rimraf` utilities in order to support cross-platform opening and deleting files.
