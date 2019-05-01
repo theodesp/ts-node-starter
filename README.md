@@ -6,7 +6,7 @@ An opinionated boilerplate project built with Node.js and Typescript.
 
 ## Scripts
 
-The following npm scripts can be run using `npm run <script>`. This project relies on `opn` and `rimraf` utilities in order to support cross-platform opening and deleting files.
+The following npm scripts can be run using `npm run <script>`. This project relies on `cross-env` and `rimraf` utilities in order to support cross-platform opening and deleting files.
 
 - `build` - build the TypeScript files and output to `lib/`
 - `build:watch` - automatically rebuild files if changes are detected in `src/`
