@@ -2,12 +2,12 @@
   "name": "ts-node-starter",
   "version": "1.0.0",
   "description": "Opinionated Typescript Node Starter",
-  "main": "index.js",
+  "main": "dist/app.js",
   "scripts": {
-    "build": "tsc --project tsconfig.json",
+    "build": "tsc --project tsconfig.json && npm run lint",
     "build:watch": "npm run build -- --watch",
     "clean": "npm run clean:build && npm run clean:coverage",
-    "clean:build": "rimraf lib/",
+    "clean:build": "rimraf dist/",
     "clean:coverage": "rimraf coverage/",
     "coverage": "jest --config jest/jest-coverage.config.json",
     "coverage:open": "npm run coverage && opn ./coverage/index.html",
@@ -35,10 +35,18 @@
     "dotenv": "^7.0.0",
     "jest": "^24.7.1",
     "nodemon": "^1.19.0",
+    "prettier": "^1.17.0",
     "rimraf": "^2.6.3",
     "ts-jest": "^24.0.2",
     "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.4.5",
     "winston": "^3.2.1"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "prettier": {
+    "singleQuote": true
   }
 }
