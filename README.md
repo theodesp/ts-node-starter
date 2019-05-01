@@ -1,5 +1,7 @@
 # ts-node-starter
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/theodesp/ts-node-starter.svg)](https://greenkeeper.io/)
+
 An opinionated boilerplate project built with Node.js and Typescript.
 
 ## Scripts
