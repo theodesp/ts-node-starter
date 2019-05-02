@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import expressValidator from 'express-validator';
 import lusca from 'lusca';
+import path from 'path';
 import {SESSION_SECRET} from './core/settings';
 import {healthRouter} from './routes/health';
 
@@ -36,6 +37,9 @@ app.use(lusca({
     referrerPolicy: 'same-origin'
 }));
 
+app.use(
+    express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 })
+);
 
 app.use('/health', healthRouter);
 
