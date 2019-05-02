@@ -7,7 +7,7 @@
     }
   },
   "testMatch": [
-    "**/tests/**/*.ts"
+    "**/tests/**/*test.ts"
   ],
   "rootDir": "./../"
 }
