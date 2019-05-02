@@ -12,6 +12,8 @@ An opinionated boilerplate project built with Node.js and Typescript.
 - Type System: [TypeScript](https://www.typescriptlang.org/)
 - Test Runner: [Jest](https://jestjs.io/)
 - Linter: [TSlint](https://palantir.github.io/tslint/)
+- Assertions: [Chai](https://www.chaijs.com/)
+- Security: [lusca](https://github.com/krakenjs/lusca)
 
 ## Scripts
 
