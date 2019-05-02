@@ -1,4 +1,5 @@
 import winston from 'winston';
+import UncaughtExceptionListener = NodeJS.UncaughtExceptionListener;
 
 const logger = winston.createLogger({
     transports: [
@@ -13,6 +14,10 @@ if (process.env.NODE_ENV !== 'production') {
 
 process.on('unhandledRejection',  (reason: any, p: Promise<any>) => {
     logger.warn('System level exceptions at, Possibly Unhandled Rejection at: Promise ', p, ' reason: ', reason);
+});
+
+process.on('uncaughtException', (e: Error) => {
+    logger.warn('System level exceptions at, Possibly Uncaught Rejection at: ', e);
 });
 
 export default logger;
