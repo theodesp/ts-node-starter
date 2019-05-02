@@ -1,5 +1,5 @@
 {
-  "moduleFileExtensions": [ "ts", "js" ],
+  "moduleFileExtensions": [ "ts", "js", "ts", "tsx", "json" ],
   "preset": "ts-jest",
   "globals": {
     "ts-jest": {

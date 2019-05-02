@@ -11,4 +11,8 @@ if (process.env.NODE_ENV !== 'production') {
     logger.debug('Logging initialized at debug level');
 }
 
+process.on('unhandledRejection',  (reason: any, p: Promise<any>) => {
+    logger.warn('System level exceptions at, Possibly Unhandled Rejection at: Promise ', p, ' reason: ', reason);
+});
+
 export default logger;

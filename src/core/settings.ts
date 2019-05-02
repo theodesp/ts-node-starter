@@ -10,5 +10,11 @@ if (fs.existsSync('.env')) {
     dotenv.config({ path: '.env.example' });  // you can delete this after you create your own .env file!
 }
 
+export const SESSION_SECRET = process.env.SESSION_SECRET;
+if (!SESSION_SECRET) {
+    logger.error('No client secret. Set SESSION_SECRET environment variable.');
+    process.exit(1);
+}
+
 export const ENVIRONMENT = process.env.NODE_ENV;
 export const isProduction = ENVIRONMENT === 'production'; // Anything else is treated as 'dev'
