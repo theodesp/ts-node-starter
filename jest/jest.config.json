@@ -9,5 +9,6 @@
   "testMatch": [
     "**/tests/**/*test.ts"
   ],
+  "verbose": true,
   "rootDir": "./../"
 }
