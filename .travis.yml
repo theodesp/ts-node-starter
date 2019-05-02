@@ -10,7 +10,7 @@ cache:
 install:
   - npm install
 script:
-  - npm start test
   - npm run build
+  - npm run test
 notifications:
   email: false

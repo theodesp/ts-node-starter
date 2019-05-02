@@ -1,6 +1,8 @@
 # ts-node-starter
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/theodesp/ts-node-starter.svg)](https://greenkeeper.io/)
+[![Build Status](https://travis-ci.org/theodesp/ts-node-starter.svg?branch=master)](https://travis-ci.org/theodesp/ts-node-starter)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 An opinionated boilerplate project built with Node.js and Typescript.
 
