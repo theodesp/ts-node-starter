@@ -1,22 +1,21 @@
+import {httpListener} from '@marblejs/core';
+import {bodyParser$} from '@marblejs/middleware-body';
+import {cors$} from '@marblejs/middleware-cors';
+import {logger$} from '@marblejs/middleware-logger';
 import dotenv from 'dotenv';
-import express from 'express';
-import path from 'path';
-import middleware from './core/middleware';
-import {applyMiddleware, applyRoutes} from './core/utils';
-import routes from './routes';
+import {healthRoute$} from './effects';
 
 // Load environment variables from .env file, where API keys and passwords are configured
 dotenv.config({path: '.env.example'});
 
-// Create Express server
-const app = express();
-applyMiddleware(middleware, app);
-applyRoutes(routes, app);
+const middlewares = [
+    logger$(),
+    bodyParser$(),
+    cors$()
+];
 
-// Express configuration
-app.set('port', process.env.PORT || 3000);
-app.use(
-    express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 })
-);
+const effects: any = [
+    healthRoute$
+];
 
-export default app;
+export default httpListener({middlewares, effects});

@@ -1,33 +1,14 @@
-import errorHandler = require('errorhandler');
-import {Request} from 'express';
-import { notify } from 'node-notifier';
-import logger from './core/logger';
-import {isProduction} from './core/settings';
+import { createServer, createContext, combineMiddlewares } from '@marblejs/core';
+import httpListener from './app';
+import {env} from './core/settings'
 
-import app from './app';
+const httpServer = httpListener
+    .run(createContext());
 
-const errorNotification = (err: Error, str: string, req: Request) => {
-    const title = `Error in ${req.method} ${req.url}`;
-
-    notify({
-        message: str,
-        title,
-    });
-};
-
-if (!isProduction) {
-    // only use in development
-    app.use(errorHandler({log: errorNotification}));
-}
-
-/**
- * Start Express server.
- */
-const server = app.listen(app.get('port'), () => {
-    logger.info(
-        `App is running at http://localhost:${app.get('port')} in ${app.get('env')} mode`,
-    );
-    logger.info('Running... Press CTRL-C to stop\n');
+export const server = createServer({
+    port: env.SERVER_PORT,
+    hostname: env.SERVER_HOST,
+    httpListener,
 });
 
-export default server;
+server.run();
