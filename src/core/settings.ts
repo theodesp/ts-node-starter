@@ -15,13 +15,15 @@ if (!SESSION_SECRET) {
 const ENVIRONMENT = process.env.NODE_ENV;
 const isProduction = ENVIRONMENT === 'production';
 const isTest = ENVIRONMENT === 'test';
+export const DB_URI = isProduction ? process.env.DB_URI : process.env.DB_URI_LOCAL;
 
 export const env = {
     NODE_ENV: ENVIRONMENT,
     SERVER_HOST: '127.0.0.1',
     SERVER_PORT: 3000,
     LOG_LEVEL: 'dev',
-    SESSION_SECRET: SESSION_SECRET,
+    SESSION_SECRET,
     IS_PRODUCTION: isProduction,
-    IS_TEST: isTest
+    IS_TEST: isTest,
+    DB_URI
 };
