@@ -1,4 +1,5 @@
 import { createContext, createServer } from '@marblejs/core';
+import {QueryResult} from 'pg';
 import httpListener from './app';
 import postgres from './core/db'
 import {env} from './core/settings'
@@ -10,8 +11,12 @@ export const index = createServer({
 });
 
 const bootstrap = async () => {
-    const result = await postgres.query('SELECT NOW()');
-    console.log(result.rows[0]);
+    const result = await postgres.cursor('SELECT NOW()');
+    result.read(1, (err: any, res: any) => {
+        console.warn(res);
+        result.release();
+    });
+
     index.run();
 };
 
