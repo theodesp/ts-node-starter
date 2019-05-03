@@ -54,7 +54,7 @@
     "@types/winston": "^2.4.4",
     "chai": "^4.2.0",
     "concurrently": "^4.1.0",
-    "dotenv": "^7.0.0",
+    "dotenv": "^8.0.0",
     "jest": "^24.7.1",
     "node-notifier": "^5.4.0",
     "nodemon": "^1.19.0",
