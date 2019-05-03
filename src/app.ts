@@ -1,7 +1,6 @@
 import {httpListener} from '@marblejs/core';
 import {bodyParser$} from '@marblejs/middleware-body';
-import {cors$} from '@marblejs/middleware-cors';
-import {logger$} from '@marblejs/middleware-logger';
+import {cors$, logger$} from './api/common/middleware';
 import dotenv from 'dotenv';
 import {api$} from './api';
 
@@ -9,9 +8,9 @@ import {api$} from './api';
 dotenv.config({path: '.env.example'});
 
 const middlewares = [
-    logger$(),
+    logger$,
     bodyParser$(),
-    cors$()
+    cors$
 ];
 
 const effects: any = [

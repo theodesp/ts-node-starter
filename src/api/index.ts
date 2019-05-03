@@ -1,5 +1,5 @@
 import {combineRoutes, EffectFactory} from '@marblejs/core';
-import { getFileEffect$ } from './common/effects';
+import { getFileEffect$, notFoundEffect$ } from './common/effects';
 import {health$} from './health';
 
 const getFile$ = EffectFactory
@@ -7,7 +7,13 @@ const getFile$ = EffectFactory
     .matchType('GET')
     .use(getFileEffect$);
 
+
+const notFound$ = EffectFactory
+    .matchPath('*')
+    .matchType('*')
+    .use(notFoundEffect$);
+
 export const api$ = combineRoutes('/', {
     middlewares: [],
-    effects: [health$, getFile$],
+    effects: [health$, getFile$, notFound$],
 });

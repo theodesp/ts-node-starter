@@ -13,7 +13,8 @@ if (!SESSION_SECRET) {
 }
 
 const ENVIRONMENT = process.env.NODE_ENV;
-const isProduction = ENVIRONMENT === 'production'; // Anything else is treated as 'dev'
+const isProduction = ENVIRONMENT === 'production';
+const isTest = ENVIRONMENT === 'test';
 
 export const env = {
     NODE_ENV: ENVIRONMENT,
@@ -21,5 +22,6 @@ export const env = {
     SERVER_PORT: 3000,
     LOG_LEVEL: 'dev',
     SESSION_SECRET: SESSION_SECRET,
-    IS_PRODUCTION: isProduction
+    IS_PRODUCTION: isProduction,
+    IS_TEST: isTest
 };
