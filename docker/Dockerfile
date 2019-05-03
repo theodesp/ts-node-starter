@@ -4,7 +4,7 @@ FROM node:alpine
 WORKDIR /usr/src/app
 
 # Copy app source to work directory
-COPY . /usr/src/app
+COPY ../ /usr/src/app
 
 # Install app dependencies
 RUN npm install && npm run build

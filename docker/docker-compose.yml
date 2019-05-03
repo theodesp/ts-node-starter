@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  mongodb:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    container_name: ts-node-pg
+
+networks:
+  default:
+    driver: bridge
+

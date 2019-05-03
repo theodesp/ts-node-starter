@@ -19,7 +19,9 @@
     "start:watch": "nodemon --watch src --ext ts --exec yarn run start:dev",
     "test": "jest --config jest/jest.config.json",
     "test:watch": "jest --expand --onlyChanged --config jest/jest.config.json",
-    "test:ci": "jest --ci --config jest/jest-ci.config.json"
+    "test:ci": "jest --ci --config jest/jest-ci.config.json",
+    "docker": "docker-compose -f docker/docker-compose.yml up --build -d",
+    "doc": "mkdir -p ./dist && hercule src/api/index.apib -o ./dist/docs.apib"
   },
   "repository": {
     "type": "git",
@@ -45,6 +47,7 @@
     "chai": "^4.2.0",
     "concurrently": "^4.1.0",
     "dotenv": "^7.0.0",
+    "hercule": "^4.1.1",
     "husky": "^2.2.0",
     "jest": "^24.7.1",
     "node-notifier": "^5.4.0",
