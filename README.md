@@ -20,7 +20,6 @@ An opinionated boilerplate project built with Node.js and Typescript.
 The following npm scripts can be run using `npm run <script>`. This project relies on `cross-env` and `rimraf` utilities in order to support cross-platform opening and deleting files.
 
 - `build` - build the TypeScript files and output to `lib/`
-- `build:watch` - automatically rebuild files if changes are detected in `src/`
 - `clean `- recursively delete the `lib/` and `coverage/` directories
 - `clean:build `- recursively delete the `lib/` directory
 - `clean:coverage` - recursively delete the `coverage/` directory
@@ -28,7 +27,9 @@ The following npm scripts can be run using `npm run <script>`. This project reli
 - `coverage:open` - run npm run coverage then open the results in a browser
 - `dev `- concurrently run `build:watch` and `start:watch` 
 - `lint `- run the linter configured by TSLint on the `src/` directory
-- `start` - run the app from `lib/`. Make sure to use npm run build first!
-- `start:watch` - relaunch the server if new changes are detected in `lib/` 
+- `start` - run server
+- `start:dev` - run server from `src`
+- `start:watch` - relaunch the server if new changes are detected in `src/` 
 - `test `- run unit tests defined in the `tests/` directory
+- `test:watch `- run tests in watch mode
 - `test:ci `- run unit tests and generate necessary files for CI integration

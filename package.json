@@ -5,7 +5,6 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc --project tsconfig.json",
-    "build:watch": "npm run build -- --watch",
     "clean": "npm run clean:build && npm run clean:coverage",
     "clean:build": "rimraf dist/",
     "clean:coverage": "rimraf coverage/",
@@ -16,9 +15,10 @@
     "install:ci": "npm ci",
     "pretest": "npm run lint",
     "lint": "tslint -c tslint.json -p tsconfig.json",
-    "start": "node dist/index.js",
-    "start:watch": "nodemon dist/index.js --log",
+    "start:dev": "ts-node src/index.ts",
+    "start:watch": "nodemon --watch src --ext ts --exec yarn run start:dev",
     "test": "jest --config jest/jest.config.json",
+    "test:watch": "jest --expand --onlyChanged --config jest/jest.config.json",
     "test:ci": "jest --ci --config jest/jest-ci.config.json"
   },
   "repository": {
