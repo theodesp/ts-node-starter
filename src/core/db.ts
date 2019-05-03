@@ -1,7 +1,6 @@
 import {Pool, QueryArrayConfig, QueryConfig, QueryResult} from 'pg';
 // @ts-ignore
 import Cursor from 'pg-cursor';
-import { env } from './settings';
 
 export interface DB {
     query: (q: string | QueryConfig | QueryArrayConfig, params?: string[]) => Promise<QueryResult>;
@@ -48,7 +47,3 @@ export class Postgres implements DB {
         return this.driver.end();
     }
 }
-
-export default new Postgres(new Pool({
-    connectionString: env.DB_URI,
-}))

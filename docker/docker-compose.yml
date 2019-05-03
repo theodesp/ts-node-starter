@@ -1,4 +1,4 @@
-version: '3'
+version: '3.4'
 
 services:
   mongodb:
@@ -8,6 +8,11 @@ services:
     ports:
       - "5432:5432"
     container_name: ts-node-pg
+    volumes:
+      - pg:/var/lib/postgresql/data
+
+volumes:
+  pg:
 
 networks:
   default:
