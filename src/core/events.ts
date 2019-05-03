@@ -2,7 +2,7 @@ import {map, tap} from 'rxjs/operators';
 
 import {HttpServerEffect, matchEvent, ServerEvent} from '@marblejs/core';
 
-export const listening$: HttpServerEffect = (event$, server, meta) =>
+export const listening$: HttpServerEffect = (event$) =>
     event$.pipe(
         matchEvent(ServerEvent.listening),
         map(event => event.payload),
