@@ -44,12 +44,13 @@
   "author": "Theo Despoudis",
   "license": "MIT",
   "devDependencies": {
+    "@types/bluebird": "^3.5.26",
     "@types/chai": "^4.1.7",
     "@types/dotenv": "^6.1.1",
     "@types/jest": "^24.0.12",
     "@types/node": "^11.13.8",
     "@types/node-notifier": "^5.4.0",
-    "@types/pg": "^7.4.14",
+    "@types/pg-promise": "^5.4.3",
     "@types/shelljs": "^0.8.5",
     "@types/supertest": "^2.0.7",
     "chai": "^4.2.0",
@@ -69,8 +70,7 @@
     "ts-node": "^8.1.0",
     "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.4.5",
-    "winston": "^3.2.1"
+    "typescript": "^3.4.5"
   },
   "engines": {
     "node": ">=10"
@@ -85,13 +85,12 @@
     "@marblejs/middleware-io": "^2.1.0",
     "@marblejs/middleware-jwt": "^2.1.0",
     "@marblejs/middleware-logger": "^2.1.0",
+    "bluebird": "^3.5.4",
     "chalk": "^2.4.2",
-    "compression": "^1.7.4",
-    "errorhandler": "^1.5.0",
     "fp-ts": "^1.17.2",
     "monocle-ts": "^1.7.1",
-    "pg": "^7.10.0",
-    "pg-cursor": "^2.0.0",
+    "pg-monitor": "^1.1.0",
+    "pg-promise": "^8.6.5",
     "rxjs": "^6.5.1"
   }
 }

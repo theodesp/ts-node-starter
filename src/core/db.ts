@@ -1,49 +1,35 @@
-import {Pool, QueryArrayConfig, QueryConfig, QueryResult} from 'pg';
-// @ts-ignore
-import Cursor from 'pg-cursor';
+import * as promise from 'bluebird';
+import {IDatabase, IMain, IOptions} from 'pg-promise';
+import pgPromise from 'pg-promise';
+import {IExtensions} from '../persistence';
+import {env} from './settings';
+// Load and initialize optional diagnostics:
+import {init} from './diagnostics';
 
-export interface DB {
-    query: (q: string | QueryConfig | QueryArrayConfig, params?: string[]) => Promise<QueryResult>;
-    disconnect: () => Promise<void>;
-}
+// pg-promise initialization options:
+const initOptions: IOptions<IExtensions> = {
 
-export class Postgres implements DB {
-    private driver: Pool;
-    constructor(driver: Pool) {
-        this.driver = driver;
+    // Using a custom promise library, instead of the default ES6 Promise.
+    // To make the custom promise protocol visible, you need to patch the
+    // following file: node_modules/pg-promise/typescript/ext-promise.d.ts
+    promiseLib: promise,
+
+    // Extending the database protocol with our custom repositories;
+    // API: http://vitaly-t.github.io/pg-promise/global.html#event:extend
+    extend(obj: IExtensions, dc: any) {
+        // Database Context (dc) is mainly needed for extending multiple databases
+        // with different access API.
     }
 
-    public async query(q: string | QueryConfig | QueryArrayConfig, params?: string[]): Promise<QueryResult>  {
-        const client = await this.driver.connect();
-        try {
-            const res = await client.query(q, params);
-            return res;
-        } catch (e) {
-            console.warn(e.stack);
-            return Promise.reject(new Error(e));
-        } finally {
-            client.release()
-        }
-    }
+};
 
-    public async cursor(q: string | QueryConfig | QueryArrayConfig, params?: string[]): Promise<any> {
-        const client = await this.driver.connect();
-        let cursor: any;
-        try {
-            cursor = await client.query(new Cursor(q, params));
-            cursor.release = function () {
-                this.close(() => {
-                    client.release()
-                })
-            };
-            return cursor;
-        } catch (e) {
-            console.warn(e.stack);
-            return Promise.reject(new Error(e));
-        }
-    }
+const pgp: IMain = pgPromise(initOptions);
 
-    public disconnect(): Promise<void> {
-        return this.driver.end();
-    }
-}
+// Create the database instance with extensions:
+const db = pgp(env.DB_URI!) as IDatabase<IExtensions> & IExtensions;
+
+init(initOptions);
+
+// If you ever need access to the library's root (pgp object), you can do it via db.$config.pgp
+// See: http://vitaly-t.github.io/pg-promise/Database.html#.$config
+export default db;
