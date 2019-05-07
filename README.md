@@ -13,7 +13,7 @@ An opinionated boilerplate project built with Node.js and Typescript.
 - Test Runner: [Jest](https://jestjs.io/)
 - Linter: [TSlint](https://palantir.github.io/tslint/)
 - Assertions: [Chai](https://www.chaijs.com/)
-- Security: [lusca](https://github.com/krakenjs/lusca)
+- Framework: [Marble.js](https://docs.marblejs.com/)
 
 ## Scripts
 
