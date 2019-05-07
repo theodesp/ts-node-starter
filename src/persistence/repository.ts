@@ -1,7 +1,7 @@
 import {IDatabase, IMain, QueryFile} from 'pg-promise';
 
 export interface WriteOps<T> {
-    insert(item: T): Promise<boolean>;
+    insert(item: T): Promise<string>;
     update(id: string, item: T): Promise<boolean>;
     delete(id: string): Promise<boolean>;
 }
@@ -47,7 +47,7 @@ export abstract class Repository<T> implements WriteOps<T>, ReadOps<T> {
         return this.db.none(this.sqlOPS.empty);
     }
 
-    public insert(item: T): Promise<boolean> {
+    public insert(item: T): Promise<string> {
         throw new Error('Method not implemented.');
     }
     public update(id: string, item: T): Promise<boolean> {

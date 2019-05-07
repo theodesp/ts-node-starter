@@ -1,4 +1,4 @@
-import { HttpStatus, HttpEffect } from '@marblejs/core';
+import { HttpEffect, HttpStatus } from '@marblejs/core';
 import { mapTo } from 'rxjs/operators';
 
 export const preflightEffect$: HttpEffect = req$ =>

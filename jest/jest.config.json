@@ -6,8 +6,10 @@
       "tsConfig": "tsconfig.json"
     }
   },
+  "setupTestFrameworkScriptFile": "./tests/setup.ts",
   "testMatch": [
-    "**/tests/**/*test.ts"
+    "**/tests/**/*test.ts",
+    "**/*.spec.ts"
   ],
   "verbose": true,
   "rootDir": "./../"

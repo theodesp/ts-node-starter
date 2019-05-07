@@ -1,6 +1,7 @@
 import {combineRoutes, EffectFactory} from '@marblejs/core';
 import {getFileEffect$, notFoundEffect$, preflightEffect$, versionEffect$} from './common/effects';
 import {health$} from './health';
+import {users$} from './users';
 
 const root$ = EffectFactory
     .matchPath('/')
@@ -24,5 +25,5 @@ const notFound$ = EffectFactory
 
 export const api$ = combineRoutes('/', {
     middlewares: [],
-    effects: [root$, health$, getFile$, preflight$, notFound$],
+    effects: [root$, health$, users$, getFile$, preflight$, notFound$],
 });

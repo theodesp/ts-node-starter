@@ -1,8 +1,8 @@
 import * as promise from 'bluebird';
 import {IDatabase, IMain, IOptions} from 'pg-promise';
 import pgPromise from 'pg-promise';
-import {UsersRepository} from '../users/repositories';
 import {IExtensions} from '../persistence';
+import {UsersRepository} from '../users/repositories';
 import {usersSQLOps} from '../users/sql';
 // Load and initialize optional diagnostics:
 import {init} from './diagnostics';

@@ -1,12 +1,17 @@
 import {User} from '../models';
 
 export class UserMappingService {
-    public mapUser(u: any | null): User | null {
-        if (u) {
-            return new User(u.id, u.email, u.firstname, u.lastname)
+    public static mapUser(user: any | null): User | null {
+        if (user) {
+            return new User(user.id, user.email, user.firstname, user.lastname);
         }
-        return u
+        return user;
+    }
+
+    public static mapAllUsers(users: any[]): User[] {
+        const result: User[] = users.map((u => {
+            return UserMappingService.mapUser(u) as User
+        }));
+        return result;
     }
 }
-
-export default new UserMappingService()

@@ -1,6 +1,6 @@
-import { HttpError, HttpStatus, HttpEffect } from '@marblejs/core';
-import { switchMap } from 'rxjs/operators';
+import { HttpEffect, HttpError, HttpStatus } from '@marblejs/core';
 import { throwError } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 export const notFoundEffect$: HttpEffect = req$ =>
     req$.pipe(switchMap(() =>
