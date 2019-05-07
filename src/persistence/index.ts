@@ -1,2 +1,2 @@
-export * from './repositories';
-export * from './sql';
+export * from './repository';
+export * from './extensions';

@@ -1,7 +1,5 @@
 import {QueryFile, TQueryFileOptions} from 'pg-promise';
 
-import path from 'path';
-
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // Criteria for deciding whether to place a particular query into an external SQL file or to
 // keep it in-line (hard-coded):
@@ -20,9 +18,7 @@ import path from 'path';
 
 ///////////////////////////////////////////////
 // Helper for linking to external query files;
-const sql = (file: string): QueryFile => {
-
-    const fullPath: string = path.join(__dirname, file); // generating full path;
+export const sql = (filePath: string): QueryFile => {
 
     const options: TQueryFileOptions = {
 
@@ -37,7 +33,7 @@ const sql = (file: string): QueryFile => {
         }
     };
 
-    const qf: QueryFile = new QueryFile(fullPath, options);
+    const qf: QueryFile = new QueryFile(filePath, options);
 
     if (qf.error) {
         // Something is wrong with our query file :(
@@ -50,7 +46,7 @@ const sql = (file: string): QueryFile => {
 
     // See QueryFile API:
     // http://vitaly-t.github.io/pg-promise/QueryFile.html
-}
+};
 
 //////////////////////////////////////////////////////////////////////////
 // Possible alternative - enumerating all SQL files automatically ;)
