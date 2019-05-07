@@ -12,7 +12,7 @@ export interface ReadOps<T> {
     findAll(): Promise<T[]>;
 }
 
-export interface SQLOps {
+export interface CommonSQL {
     create: QueryFile,
     empty: QueryFile,
     init: QueryFile,
@@ -23,28 +23,30 @@ export interface SQLOps {
 export abstract class Repository<T> implements WriteOps<T>, ReadOps<T> {
     protected readonly db: IDatabase<any>;
     protected readonly pgp: IMain;
-    protected readonly sqlOPS: SQLOps;
+    protected readonly commonSQL: CommonSQL;
 
-    protected constructor(db: any, pgp: IMain, sqlOPS: SQLOps) {
+    protected constructor(db: any, pgp: IMain, commonSQL: CommonSQL) {
         this.db = db;
         this.pgp = pgp; // library's root, if ever needed;
-        this.sqlOPS = sqlOPS; // library's root, if ever needed;
+        this.commonSQL = commonSQL; // common SQL Operations
     }
 
     // Creates the table;
     public async create(): Promise<boolean> {
-        const result = await this.db.none(this.sqlOPS.create);
+        const result = await this.db.none(this.commonSQL.create);
         return !!result;
     }
 
     // Drops the table;
-    public drop(): Promise<null> {
-        return this.db.none(this.sqlOPS.drop);
+    public async drop(): Promise<null> {
+        const result = await this.db.none(this.commonSQL.drop);
+        return result;
     }
 
     // Removes all records from the table;
-    public empty(): Promise<null> {
-        return this.db.none(this.sqlOPS.empty);
+    public async empty(): Promise<null> {
+        const result = await this.db.none(this.commonSQL.empty);
+        return result;
     }
 
     public insert(item: T): Promise<string> {
