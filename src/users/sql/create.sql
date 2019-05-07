@@ -7,5 +7,8 @@
 CREATE TABLE ${schema~}.users
 (
     id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
-    name VARCHAR NOT NULL
+    email text NOT NULL UNIQUE,
+    firstname VARCHAR,
+    lastname VARCHAR,
+    password text
 )

@@ -9,10 +9,10 @@
     https://github.com/vitaly-t/pg-promise/wiki/Performance-Boost
 */
 
-INSERT INTO ${schema~}.users(name) VALUES
-('Demo User 1'), -- user 1;
-('Demo User 2'), -- user 2;
-('Demo User 3'), -- user 3;
-('Demo User 4'), -- user 4;
-('Demo User 5') -- user 5;
+INSERT INTO ${schema~}.users(email, firstname) VALUES
+('th1@hotmail.com', 'Demo1'), -- user 1;
+('th2@hotmail.com', 'Demo2'), -- user 2;
+('th3@hotmail.com', 'Demo3'), -- user 3;
+('th4@hotmail.com', 'Demo4'), -- user 4;
+('th5@hotmail.com', 'Demo5') -- user 5;
 RETURNING id

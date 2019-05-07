@@ -1,6 +1,6 @@
 // Database Interface Extensions:
-import {UsersRepository} from '../api/users/repositories';
+import {UsersRepository} from '../users/repositories';
 
 export interface IExtensions {
-    users: UsersRepository
+    users: UsersRepository;
 }
