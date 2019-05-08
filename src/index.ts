@@ -1,7 +1,7 @@
 import httpListener from '@app';
 import {listening$} from '@core/events';
 import {env} from '@core/settings';
-import { createServer } from '@marblejs/core';
+import {createServer} from '@marblejs/core';
 import {merge} from 'rxjs';
 
 export const index = createServer({

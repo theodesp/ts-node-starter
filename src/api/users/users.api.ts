@@ -1,5 +1,6 @@
-import { combineRoutes, EffectFactory } from '@marblejs/core';
-import { getUserEffect$, getUserListEffect$ } from './effects';
+import {authorize$} from '@api/auth';
+import {combineRoutes, EffectFactory} from '@marblejs/core';
+import {getUserEffect$, getUserListEffect$} from './effects';
 
 export const getUserList$ = EffectFactory
     .matchPath('/')
@@ -13,5 +14,5 @@ export const getUser$ = EffectFactory
 
 export const users$ = combineRoutes('/users', {
     effects: [getUserList$, getUser$],
-    middlewares: [],
+    middlewares: [authorize$],
 });

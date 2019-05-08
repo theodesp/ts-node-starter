@@ -4,7 +4,7 @@ import {of} from 'rxjs';
 import request from 'supertest';
 import {index} from '../../../index';
 
-const USER_MOCK = new User('1', 'th@th', 'Alex');
+const USER_MOCK = new User('1', 'th@th', 'Alex', '', '123');
 
 describe('Login effect', () => {
     let jwtMiddleware: any;

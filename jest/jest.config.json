@@ -6,9 +6,8 @@
       "tsConfig": "tsconfig.json"
     }
   },
-  "setupFilesAfterEnv": ["./tests/setup.ts"],
+  "setupFilesAfterEnv": ["./src/tests/setup.ts"],
   "testMatch": [
-    "**/tests/**/*test.ts",
     "**/*.spec.ts"
   ],
   "testEnvironment": "node",
