@@ -15,7 +15,8 @@
     "install:ci": "npm ci",
     "pretest": "npm run lint",
     "lint": "tslint -c tslint.json -p tsconfig.json",
-    "start:dev": "ts-node src/index.ts",
+    "start:dev": "ts-node -r tsconfig-paths/register src/index.ts",
+    "start:prod": "node -r ./tsconfig-paths.js dist/index.js",
     "start:watch": "nodemon --watch src --ext ts --exec npm run start:dev",
     "test": "jest --config jest/jest.config.json",
     "test:watch": "jest --expand --onlyChanged --config jest/jest.config.json",
@@ -68,6 +69,7 @@
     "supertest": "^4.0.2",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.1.0",
+    "tsconfig-paths": "^3.8.0",
     "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.4.5"

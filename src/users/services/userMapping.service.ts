@@ -5,7 +5,7 @@ export class UserMappingService {
         if (user) {
             return new User(user.id, user.email, user.firstname, user.lastname);
         }
-        return user;
+        return null;
     };
 
     public mapAllUsers = (users: any[]): User[] => {

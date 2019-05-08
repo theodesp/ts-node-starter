@@ -1,8 +1,8 @@
+import db from '@core/db';
+import {User} from '@users/models';
 import {of} from 'rxjs';
 import request from 'supertest';
-import db from '../../../core/db';
 import {index} from '../../../index';
-import {User} from '../../../users/models';
 
 const USER_MOCK = new User('1', 'th@th', 'Alex');
 

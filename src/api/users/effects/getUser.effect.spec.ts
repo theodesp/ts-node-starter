@@ -1,9 +1,9 @@
+import db from '@core/db';
 import {createContext} from '@marblejs/core';
+import {User} from '@users/models';
 import {of} from 'rxjs';
 import request from 'supertest';
 import httpListener from '../../../app';
-import db from '../../../core/db';
-import {User} from '../../../users/models';
 
 describe('getUser$', () => {
     const app = httpListener.run(createContext());

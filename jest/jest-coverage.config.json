@@ -6,14 +6,22 @@
       "tsConfig": "tsconfig.json"
     }
   },
-  "setupTestFrameworkScriptFile": "./tests/setup.ts",
+  "setupFilesAfterEnv": ["./tests/setup.ts"],
   "testMatch": [
     "**/tests/**/*.ts",
     "**/*.spec.ts"
   ],
+  "testEnvironment": "node",
   "verbose": true,
   "rootDir": "./../",
   "collectCoverage": true,
   "collectCoverageFrom": [ "src/**/*.ts" ],
-  "coverageReporters": ["json", "text", "lcov", "html"]
+  "coverageReporters": ["json", "text", "lcov", "html"],
+  "moduleNameMapper": {
+    "@app": "<rootDir>/src/app.ts",
+    "@api/(.*)": "<rootDir>/src/api/$1",
+    "@core/(.*)": "<rootDir>/src/core/$1",
+    "@users/(.*)": "<rootDir>/src/users/$1",
+    "@tests": "<rootDir>/src/tests"
+  }
 }

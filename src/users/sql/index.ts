@@ -1,8 +1,8 @@
+import {CommonSQL} from '@core/persistence/repository';
+import {sql} from '@core/sql';
 import path from 'path';
-import {sql} from '../../core/sql';
-import {SQLOps} from '../../persistence';
 const currPath = path.resolve(path.dirname(__filename));
-export const usersSQLOps: SQLOps = {
+export const usersSQL: CommonSQL = {
     create: sql(path.resolve(currPath, 'create.sql')),
     empty: sql(path.resolve(currPath, 'empty.sql')),
     init: sql(path.resolve(currPath, 'init.sql')),

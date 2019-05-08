@@ -37,3 +37,33 @@ export const env: Environment = {
     IS_DEV: ENVIRONMENT === 'development',
     DB_URI
 };
+
+export interface ICoreConfig {
+    env: string;
+    server: {
+        host: string;
+        port: number;
+    };
+    db: {
+        urlMain: string;
+        urlTest: string;
+    };
+    jwt: {
+        secret: string,
+    };
+}
+
+export const config: ICoreConfig = {
+    env: process.env.NODE_ENV || env.NODE_ENV!,
+    server: {
+        host: process.env.HOST || env.SERVER_HOST,
+        port: Number(process.env.PORT) || env.SERVER_PORT,
+    },
+    db: {
+        urlMain: process.env.DB_URI || env.DB_URI!,
+        urlTest: process.env.DB_URI_LOCAL || env.DB_URI!,
+    },
+    jwt: {
+        secret: process.env.JWT_SECRET || env.SESSION_SECRET!,
+    },
+};

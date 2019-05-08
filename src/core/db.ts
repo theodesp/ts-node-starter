@@ -1,11 +1,11 @@
+import {UsersRepository} from '@users/repositories';
+import {usersSQL} from '@users/sql';
 import * as promise from 'bluebird';
 import {IDatabase, IMain, IOptions} from 'pg-promise';
 import pgPromise from 'pg-promise';
-import {IExtensions} from '../persistence';
-import {UsersRepository} from '../users/repositories';
-import {usersSQLOps} from '../users/sql';
 // Load and initialize optional diagnostics:
 import {init} from './diagnostics';
+import {IExtensions} from './persistence';
 import {env} from './settings';
 
 // pg-promise initialization options:
@@ -22,7 +22,7 @@ const initOptions: IOptions<IExtensions> = {
         // Database Context (dc) is mainly needed for extending multiple databases
         // with different access API.
 
-        obj.users = new UsersRepository(obj, pgp, usersSQLOps);
+        obj.users = new UsersRepository(obj, pgp, usersSQL);
     }
 
 };

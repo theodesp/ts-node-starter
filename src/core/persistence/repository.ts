@@ -7,7 +7,6 @@ export interface WriteOps<T> {
 }
 
 export interface ReadOps<T> {
-    find(item: T): Promise<T[]>;
     findOne(id: string): Promise<T | null>;
     findAll(): Promise<T[]>;
 }
@@ -56,9 +55,6 @@ export abstract class Repository<T> implements WriteOps<T>, ReadOps<T> {
         throw new Error('Method not implemented.');
     }
     public delete(id: string): Promise<boolean> {
-        throw new Error('Method not implemented.');
-    }
-    public find(item: T): Promise<T[]> {
         throw new Error('Method not implemented.');
     }
     public findOne(id: string): Promise<T | null> {

@@ -1,5 +1,5 @@
 import { generateExpirationInHours } from '@marblejs/middleware-jwt';
-import { User } from '../../../users/models';
+import { User } from '@users/models';
 
 export const generateTokenPayload = (user: User) => ({
     _id: user.id,
