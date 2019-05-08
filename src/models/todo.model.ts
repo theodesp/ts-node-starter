@@ -24,6 +24,8 @@ export class Todo extends Entity {
   })
   isComplete?: boolean;
 
+  @property()
+  todoListId: number;
 
   constructor(data?: Partial<Todo>) {
     super(data);
