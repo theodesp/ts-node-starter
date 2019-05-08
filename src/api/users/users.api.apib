@@ -1,0 +1,63 @@
+# Group Users
+
+## User list [/users]
+
+### Get all users [GET]
+
+Retrieve all public data about users registered in the system
+
++ Request
+
+    + Headers
+
+            Authorization: Bearer {JWT_token}
+
++ Response 200 (application/json)
+
+    + Attributes (array[User])
+
++ Response 401 (application/json)
+
+        {
+            "error": {
+                "status": 401,
+                "message": "Unauthorized"
+            }
+        }
+
++ Response 404 (application/json)
+
+        {
+            "error": {
+                "status": 404,
+                "message": "User does not exist"
+            }
+        }
+
+## User [/users/{userId}]
+
+### Get user by id [GET]
+
+Retrieve a user by id.
+
++ Request
+
+    + Headers
+
+            Authorization: Bearer {JWT_token}
+
++ Parameters
+
+    + userId (string) - User identifier
+
++ Response 200 (application/json)
+
+    + Attributes (User)
+
+## Data Structures
+
+### User
++ id: 5bbb4aa99279d03578598282 (string, required)
++ firstName: Jamison (string, required)
++ lastName: McKenzie (string, required)
++ email: test@email.com (string, required)

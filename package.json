@@ -22,7 +22,8 @@
     "test:watch": "jest --expand --onlyChanged --config jest/jest.config.json",
     "test:ci": "jest --ci --config jest/jest-ci.config.json",
     "docker": "docker-compose -f docker/docker-compose.yml up --build -d",
-    "doc": "mkdir -p ./dist && hercule src/api/index.apib -o ./dist/docs.apib"
+    "doc": "mkdir -p ./dist && hercule src/api/index.apib -o ./dist/docs.apib",
+    "doc:preview": "apiary preview --path dist/docs.apib"
   },
   "repository": {
     "type": "git",
