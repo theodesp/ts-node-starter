@@ -84,7 +84,7 @@
     "express-flash": "0.0.2",
     "express-paginate": "^1.0.0",
     "express-session": "^1.16.1",
-    "express-validator": "^5.3.1",
+    "express-validator": "^6.0.0",
     "lusca": "^1.6.1",
     "serve-favicon": "^2.5.0"
   }
