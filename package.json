@@ -88,7 +88,7 @@
     "@marblejs/middleware-io": "^2.1.0",
     "@marblejs/middleware-jwt": "^2.1.0",
     "@marblejs/middleware-logger": "^2.1.0",
-    "bluebird": "^3.5.4",
+    "bluebird": "3.5.5",
     "chalk": "^2.4.2",
     "fp-ts": "^1.17.2",
     "monocle-ts": "^1.7.1",
