@@ -93,7 +93,7 @@
     "fp-ts": "^1.17.2",
     "monocle-ts": "^1.7.1",
     "pg-monitor": "^1.1.0",
-    "pg-promise": "^8.6.5",
+    "pg-promise": "^9.3.6",
     "rxjs": "^6.5.1"
   }
 }
