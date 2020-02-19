@@ -50,7 +50,7 @@
     "@types/chai": "^4.1.7",
     "@types/dotenv": "^6.1.1",
     "@types/jest": "^24.0.12",
-    "@types/node": "^11.13.8",
+    "@types/node": "^13.7.4",
     "@types/node-notifier": "^5.4.0",
     "@types/pg-promise": "^5.4.3",
     "@types/shelljs": "^0.8.5",
