@@ -47,7 +47,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/bluebird": "^3.5.26",
-    "@types/chai": "^4.1.7",
+    "@types/chai": "^4.2.11",
     "@types/dotenv": "^6.1.1",
     "@types/jest": "^24.0.12",
     "@types/node": "^11.13.8",
