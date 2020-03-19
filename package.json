@@ -82,7 +82,7 @@
     "singleQuote": true
   },
   "dependencies": {
-    "@marblejs/core": "^2.1.0",
+    "@marblejs/core": "^3.0.2",
     "@marblejs/middleware-body": "^2.1.0",
     "@marblejs/middleware-cors": "^2.1.0",
     "@marblejs/middleware-io": "^2.1.0",
