@@ -64,7 +64,7 @@
     "lint-staged": "^8.1.6",
     "node-notifier": "^5.4.0",
     "nodemon": "^1.19.0",
-    "prettier": "^1.17.0",
+    "prettier": "^2.0.5",
     "rimraf": "^2.6.3",
     "shelljs": "^0.8.3",
     "supertest": "^4.0.2",
