@@ -63,7 +63,7 @@
     "jest": "^24.7.1",
     "lint-staged": "^8.1.6",
     "node-notifier": "^5.4.0",
-    "nodemon": "^1.19.0",
+    "nodemon": "^2.0.4",
     "prettier": "^1.17.0",
     "rimraf": "^2.6.3",
     "shelljs": "^0.8.3",
