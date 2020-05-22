@@ -61,7 +61,7 @@
     "hercule": "^4.1.1",
     "husky": "^2.2.0",
     "jest": "^24.7.1",
-    "lint-staged": "^8.1.6",
+    "lint-staged": "^10.2.6",
     "node-notifier": "^5.4.0",
     "nodemon": "^1.19.0",
     "prettier": "^1.17.0",
